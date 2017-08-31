@@ -10059,7 +10059,7 @@ __webpack_require__(195);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementsByTagName('body'));
+_reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementById('app'));
 
 /***/ }),
 /* 88 */
