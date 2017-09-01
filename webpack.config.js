@@ -1,18 +1,22 @@
 const path = require('path');
+
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPluginConfig = new ExtractTextPlugin({
+  filename: '[name].css',
+});
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   title: 'Plugin test',
   template: 'index.ejs',
-  inject: 'body',
+  inject: 'body'
 });
 
-module.exports = {
+const config = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -22,21 +26,35 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env'],
+            cacheDirectory: true,
+            presets: ['env']
           }
         }
       },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader",
+          fallback: 'style-loader',
+          use: 'css-loader'
         })
-      }
+      },
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        options: {
+          emitWarning: true,
+        },
+      },
     ]
   },
   plugins: [
-    new ExtractTextPlugin('styles.css'),
-    HtmlWebpackPluginConfig,
+    ExtractTextPluginConfig,
+    HtmlWebpackPluginConfig
   ]
+};
+
+module.exports = (env) => {
+  console.log('env', env);
+  return config;
 };

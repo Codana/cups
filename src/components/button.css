@@ -1,0 +1,31 @@
+.button {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 18px 0;
+  line-height: 26px;
+  text-shadow: 0 1px 0 #ffffff;
+  background-color: #ffffff;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.25);
+  border-radius: 14px;
+  height: 28px;
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+}
+.button:hover {
+  border: 1px solid rgba(0,0,0,0.35);
+  color: #215f83;
+  box-shadow: 0 0 0 #ffffff, 0 0 28px rgba(33, 95, 131, 0.19999999999999996), inset 0 -11px 1px 0 #f3f3f3;
+}
+.button:focus {
+  outline: none;
+}
+.button-info {
+  color: #ffffff;
+  background-color: #4169e1;
+}

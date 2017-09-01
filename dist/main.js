@@ -10053,13 +10053,9 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _app = __webpack_require__(193);
 
-var _app2 = _interopRequireDefault(_app);
-
-__webpack_require__(195);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementById('app'));
+_reactDom2.default.render(_react2.default.createElement(_app.App, null), document.getElementById('app'));
 
 /***/ }),
 /* 88 */
@@ -23351,7 +23347,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _button = __webpack_require__(194);
 
-var _button2 = _interopRequireDefault(_button);
+__webpack_require__(196);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23376,7 +23372,8 @@ var App = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'container' },
-        _react2.default.createElement(_button2.default, { label: 'Nappi' })
+        _react2.default.createElement(_button.Button, { label: 'Add button' }),
+        ' Oujee'
       );
     }
   }]);
@@ -23403,6 +23400,8 @@ var _react = __webpack_require__(34);
 
 var _react2 = _interopRequireDefault(_react);
 
+__webpack_require__(195);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23421,9 +23420,13 @@ var Button = function (_React$Component) {
   }
 
   _createClass(Button, [{
-    key: "render",
+    key: 'render',
     value: function render() {
-      return _react2.default.createElement("button", { className: "button-info", label: props.label });
+      return _react2.default.createElement(
+        'button',
+        { className: 'button' },
+        this.props.label
+      );
     }
   }]);
 
@@ -23434,6 +23437,12 @@ exports.default = Button;
 
 /***/ }),
 /* 195 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 196 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

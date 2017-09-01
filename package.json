@@ -4,9 +4,13 @@
   "description": "UEFA and FIFA tournament betting",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --watch --open",
+    "start": "webpack-dev-server --env development",
     "test": "mocha",
-    "build": "webpack --display-error-details"
+    "build": "webpack --display-error-details --env production",
+    "lint:js": "eslint src/ webpack.*.js --cache",
+    "lint:css": "stylelint src/**/*.css",
+    "precommit": "npm test",
+    "prepush": "npm test"
   },
   "author": "spam@karjis.com",
   "license": "ISC",
@@ -16,18 +20,28 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "babel-cli": "^6.26.0",
     "chai": "^4.1.1",
     "css-loader": "^0.28.5",
+    "eslint": "^4.5.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-react": "^7.3.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.30.1",
+    "husky": "^0.14.3",
     "mocha": "^3.5.0",
     "style-loader": "^0.18.2",
+    "stylelint": "^8.0.0",
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1"
   }
