@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
 
-const a = () => alert("Default function here");
+const a = () => alert('Default function here');
 
 class Button extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Button extends React.Component {
 
   render() {
     return (
-      <button className="button" onClick={this.props.onClick}>{this.props.label}</button>);
+      <button id='button' className='button' onClick={this.props.onClick}>{this.props.label}</button>);
   }
 }
 
