@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Button from './components/button.jsx';
 import Toolbar from './components/toolbar.jsx';
+import Form from './components/form.jsx';
+import List from './components/list.jsx';
 import './app.css';
 
 class App extends React.Component {
@@ -20,7 +22,6 @@ class App extends React.Component {
       count: prevState.count + props.increment
     }));
     */
-    ReactDOM.unmountComponentAtNode(document.getElementById('toolbar'));
   };
 
   reset = () => this.setState(state);
@@ -35,12 +36,15 @@ class App extends React.Component {
     return (
       <div className="container">
         <Button
+          id='first_button'
           label={'Button clicks: ' + this.state.counter}
           onClick={this.handleClick}
           ondblclick={this.reset}
           onWheel={this.wheeling}
         />
         <Toolbar isVisible={this.state.isToolbarVisible} />
+        <Form label='Forminen' />
+        <List />
       </div>
     );
   }

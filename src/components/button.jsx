@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, func, bool } from 'prop-types';
 import './button.css';
 
 const a = () => alert('Default function here');
@@ -11,18 +11,31 @@ class Button extends React.Component {
 
   render() {
     return (
-      <button id='button' className='button' onClick={this.props.onClick}>{this.props.label}</button>);
+      <button type='button'
+              disabled={this.props.isDisabled}
+              id={this.props.id}
+              className='button'
+              onClick={this.props.onClick}>
+        {this.props.label}
+      </button>);
   }
 }
 
 Button.defaultProps = {
   label: 'Button',
-  onClick: () => {a()}
+  onClick: () => {a()},
+  isDisabled: false,
+  className: '',
+  iconName: '',
 };
 
 Button.propTypes = {
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired
+  id: string.isRequired,
+  label: string,
+  onClick: func.isRequired,
+  isDisabled: bool,
+  className: string,
+  iconName: string,
 };
 
 export default Button;
