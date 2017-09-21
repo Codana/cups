@@ -4,6 +4,7 @@ import Button from './components/button.jsx';
 import Toolbar from './components/toolbar.jsx';
 import Form from './components/form.jsx';
 import List from './components/list.jsx';
+import Menu from './components/menu.jsx';
 import './app.css';
 
 class App extends React.Component {
@@ -35,6 +36,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
+        <Menu />
+        <br />
         <Button
           id='first_button'
           label={'Button clicks: ' + this.state.counter}
