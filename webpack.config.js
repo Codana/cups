@@ -16,7 +16,8 @@ const config = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: '[name].js',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -48,6 +49,9 @@ const config = {
         },
       },
     ]
+  },
+  devServer: {
+    historyApiFallback: true
   },
   plugins: [
     ExtractTextPluginConfig,

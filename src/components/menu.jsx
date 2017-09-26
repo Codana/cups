@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link, NavLink, Switch } from 'react-router-dom';
 import Button from './button.jsx';
 import NotFound from './404.jsx';
+import { Sidebar, Burp } from './Sidebar.jsx';
 import './menu.css';
 
 class Menu extends React.Component {
@@ -16,6 +17,7 @@ class Menu extends React.Component {
 
     const Topic = ({ match }) => {
       return (<div>
+        <Sidebar/>
         <Button id='topic-button' />
         <p><NavLink activeClassName='active-link' to={`${match.url}/jee`}>Sus</NavLink></p>
         <p><NavLink activeClassName='active-link' to={`${match.url}/666`}>iivil</NavLink></p>
@@ -27,6 +29,7 @@ class Menu extends React.Component {
       <div className="router">
         <p><Link to="/">Home</Link></p>
         <p><Link to="/another">Another</Link></p>
+        <Burp/>
         <p><Link to="/topic">Topiikki</Link></p>
         <Switch>
           <Route path="/" exact component={Home} />
