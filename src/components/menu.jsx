@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link, NavLink, Switch } from 'react-router-dom';
 import Button from './button.jsx';
 import NotFound from './404.jsx';
+import { Sidebar, Burp } from './Sidebar.jsx';
 import './menu.css';
 
 class Menu extends React.Component {
@@ -22,14 +23,13 @@ class Menu extends React.Component {
     };
 
     const Topic = ({ match }) => {
-      return (
-        <div>
-          <Button id='topic-button' />
-          <p><NavLink activeClassName='active-link' to={`${match.url}/jee`}>Sus</NavLink></p>
-          <p><NavLink activeClassName='active-link' to={`${match.url}/666`}>iivil</NavLink></p>
-          <Route path={`${match.url}/:id`} render={({ match }) => <div>{`${match.params.id}`}</div>} />
-        </div>
-      );
+      return (<div>
+        <Sidebar/>
+        <Button id='topic-button' />
+        <p><NavLink activeClassName='active-link' to={`${match.url}/jee`}>Sus</NavLink></p>
+        <p><NavLink activeClassName='active-link' to={`${match.url}/666`}>iivil</NavLink></p>
+        <Route path={`${match.url}/:id`} render={({ match }) => <div>{`${match.params.id}`}</div>} />
+      </div>);
     };
 
     return (<Router>
