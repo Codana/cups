@@ -1,0 +1,35 @@
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-rows: 50px 30px auto 30px;
+  grid-template-columns: minmax(200px, 3fr) minmax(400px, 9fr);
+}
+div {
+
+}
+#header {
+  grid-column: 1 / 3;
+  background-color: lightseagreen;
+}
+#navi {
+  grid-column: 1 / 3;
+  background-color: lightcoral;
+}
+#sidebar {
+  grid-column: 1 / 2;
+  background-color: lightgrey;
+}
+#main {
+  grid-column: 2 / 3;
+  background-color: lightskyblue;
+}
+#footer {
+  grid-column: 1 / 3;
+  background-color: lightcyan;
+}

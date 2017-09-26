@@ -28,11 +28,12 @@ class Form extends React.Component {
     ];
 
     const els = list.map(row => {
-      return <Button id={row.id.toString()}
-                     label={'Button ' + row.name}
-                     key={row.id.toString()}
-                     onClick={this.handleClick}
-      />;
+      return (
+        <Button id={row.id.toString()}
+          label={'Button ' + row.name}
+          key={row.id.toString()}
+          onClick={this.handleClick}
+        />);
     });
 
     return (

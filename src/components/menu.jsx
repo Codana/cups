@@ -5,6 +5,13 @@ import NotFound from './404.jsx';
 import './menu.css';
 
 class Menu extends React.Component {
+
+  componentDidMount() {
+    let klikutin = e => alert(e.target);
+    let link = document.getElementById('klik');
+    link.addEventListener('click', klikutin, false);
+  }
+
   render() {
     const Home = () => <div>Homee</div>;
     const About = () => <div>Anotherr</div>;
@@ -15,18 +22,20 @@ class Menu extends React.Component {
     };
 
     const Topic = ({ match }) => {
-      return (<div>
-        <Button id='topic-button' />
-        <p><NavLink activeClassName='active-link' to={`${match.url}/jee`}>Sus</NavLink></p>
-        <p><NavLink activeClassName='active-link' to={`${match.url}/666`}>iivil</NavLink></p>
-        <Route path={`${match.url}/:id`} render={({ match }) => <div>{`${match.params.id}`}</div>} />
-      </div>)
+      return (
+        <div>
+          <Button id='topic-button' />
+          <p><NavLink activeClassName='active-link' to={`${match.url}/jee`}>Sus</NavLink></p>
+          <p><NavLink activeClassName='active-link' to={`${match.url}/666`}>iivil</NavLink></p>
+          <Route path={`${match.url}/:id`} render={({ match }) => <div>{`${match.params.id}`}</div>} />
+        </div>
+      );
     };
 
     return (<Router>
       <div className="router">
         <p><Link to="/">Home</Link></p>
-        <p><Link to="/another">Another</Link></p>
+        <p><Link id='klik' to="/another">Another</Link></p>
         <p><Link to="/topic">Topiikki</Link></p>
         <Switch>
           <Route path="/" exact component={Home} />
