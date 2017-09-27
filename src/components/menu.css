@@ -3,6 +3,14 @@
   width: 100vw;
   height: 300px;
 }
+a {
+  padding: 20px 15px;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 100%;
+}
 .active-link {
   border: solid 1px blue;
   padding: 5px 2px;

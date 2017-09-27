@@ -1,16 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Button from './components/button.jsx';
 import Toolbar from './components/toolbar.jsx';
 import Form from './components/form.jsx';
 import List from './components/list.jsx';
 import Menu from './components/menu.jsx';
-import './app.css';
 
 class App extends React.Component {
   state = {
     counter: 0,
-    isToolbarVisible: true
+    isToolbarVisible: false
   };
 
   handleClick = () => {

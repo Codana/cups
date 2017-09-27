@@ -14,18 +14,14 @@ class Menu extends React.Component {
   }
 
   render() {
-    const Home = () => <div>Homee</div>;
-    const About = () => <div>Anotherr</div>;
+    const Home = () => <div>Home</div>;
+    const About = () => <div>Another</div>;
     const jee = ({ match }) => {
-      console.log("jeeeeee");
-      console.log(match.params.id);
       return (<div>{match.params}</div>);
     };
 
     const Topic = ({ match }) => {
       return (<div>
-        <Sidebar/>
-        <Button id='topic-button' />
         <p><NavLink activeClassName='active-link' to={`${match.url}/jee`}>Sus</NavLink></p>
         <p><NavLink activeClassName='active-link' to={`${match.url}/666`}>iivil</NavLink></p>
         <Route path={`${match.url}/:id`} render={({ match }) => <div>{`${match.params.id}`}</div>} />
@@ -34,9 +30,9 @@ class Menu extends React.Component {
 
     return (<Router>
       <div className="router">
-        <p><Link to="/">Home</Link></p>
-        <p><Link id='klik' to="/another">Another</Link></p>
-        <p><Link to="/topic">Topiikki</Link></p>
+        <Link to="/">Home</Link>
+        <Link id='klik' to="/another">Another</Link>
+        <Link to="/topic">Topiikki</Link>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/another" component={About} />
