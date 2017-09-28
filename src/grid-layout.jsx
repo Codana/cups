@@ -1,19 +1,24 @@
 import React from 'react';
 import './grid-layout.css';
 import Menu from './components/menu.jsx';
+import Main from './components/main.jsx';
 
-class GridLayout extends React.PureComponent {
+class GridLayout extends React.Component {
   constructor(props) {
     super(props);
+    console.log('gridlayout constructor');
   }
 
   render() {
+    console.log('gridlayout render');
     return [
-        <div key="header" id="header" />,
-        <div key="navi" id="navi"><Menu /></div>,
-        <div key="sidebar" id="sidebar" />,
-        <div key="main" id="main" />,
-        <div key="footer" id="footer" />
+      <div key="header" id="header" />,
+      <div key="navi" id="navi">
+        <Menu />
+      </div>,
+      <div key="sidebar" id="sidebar" />,
+      <Main key='main' />,
+      <div key="footer" id="footer" />
     ];
   }
 }

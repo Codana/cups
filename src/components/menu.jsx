@@ -1,11 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink, Switch } from 'react-router-dom';
-import Button from './button.jsx';
-import NotFound from './404.jsx';
-import { Sidebar, Burp } from './Sidebar.jsx';
+import { Link } from 'react-router-dom';
 import './menu.css';
 
 class Menu extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log('menu constructor');
+  }
 
   componentDidMount() {
     let klikutin = e => alert(e.target);
@@ -14,33 +15,16 @@ class Menu extends React.Component {
   }
 
   render() {
-    const Home = () => <div>Home</div>;
-    const About = () => <div>Another</div>;
-    const jee = ({ match }) => {
-      return (<div>{match.params}</div>);
-    };
-
-    const Topic = ({ match }) => {
-      return (<div>
-        <p><NavLink activeClassName='active-link' to={`${match.url}/jee`}>Sus</NavLink></p>
-        <p><NavLink activeClassName='active-link' to={`${match.url}/666`}>iivil</NavLink></p>
-        <Route path={`${match.url}/:id`} render={({ match }) => <div>{`${match.params.id}`}</div>} />
-      </div>);
-    };
-
-    return (<Router>
+    console.log('Menu render');
+    return (
       <div className="router">
         <Link to="/">Home</Link>
         <Link id='klik' to="/another">Another</Link>
-        <Link to="/topic">Topiikki</Link>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/another" component={About} />
-          <Route path="/topic" component={Topic} />
-          <Route component={NotFound} />
-        </Switch>
+        <Link to="/topics">Topics</Link>
+        <Link to="/users">Users</Link>
+        <Link to="/matches">Matches</Link>
       </div>
-    </Router>);
+    );
   }
 }
 

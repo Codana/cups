@@ -1940,21 +1940,19 @@ var Menu = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           null,
-          'Homee'
+          'Home'
         );
       };
       var About = function About() {
         return _react2.default.createElement(
           'div',
           null,
-          'Anotherr'
+          'Another'
         );
       };
       var jee = function jee(_ref) {
         var match = _ref.match;
 
-        console.log("jeeeeee");
-        console.log(match.params.id);
         return _react2.default.createElement(
           'div',
           null,
@@ -1968,8 +1966,6 @@ var Menu = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_Sidebar.Sidebar, null),
-          _react2.default.createElement(_button2.default, { id: 'topic-button' }),
           _react2.default.createElement(
             'p',
             null,
@@ -2576,7 +2572,7 @@ var _app = __webpack_require__(52);
 
 var _app2 = _interopRequireDefault(_app);
 
-var _gridLayout = __webpack_require__(91);
+var _gridLayout = __webpack_require__(90);
 
 var _gridLayout2 = _interopRequireDefault(_gridLayout);
 
@@ -22788,8 +22784,6 @@ var _menu = __webpack_require__(28);
 
 var _menu2 = _interopRequireDefault(_menu);
 
-__webpack_require__(90);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26330,12 +26324,6 @@ module.exports = { Sidebar: Sidebar, Burp: Burp };
 
 /***/ }),
 /* 90 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26347,7 +26335,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(92);
+__webpack_require__(91);
 
 var _menu = __webpack_require__(28);
 
@@ -26373,11 +26361,11 @@ var GridLayout = function (_React$PureComponent) {
   _createClass(GridLayout, [{
     key: 'render',
     value: function render() {
-      return [_react2.default.createElement('div', { id: 'header' }), _react2.default.createElement(
+      return [_react2.default.createElement('div', { key: 'header', id: 'header' }), _react2.default.createElement(
         'div',
-        { id: 'navi' },
+        { key: 'navi', id: 'navi' },
         _react2.default.createElement(_menu2.default, null)
-      ), _react2.default.createElement('div', { id: 'sidebar' }), _react2.default.createElement('div', { id: 'main' }), _react2.default.createElement('div', { id: 'footer' })];
+      ), _react2.default.createElement('div', { key: 'sidebar', id: 'sidebar' }), _react2.default.createElement('div', { key: 'main', id: 'main' }), _react2.default.createElement('div', { key: 'footer', id: 'footer' })];
     }
   }]);
 
@@ -26387,7 +26375,7 @@ var GridLayout = function (_React$PureComponent) {
 module.exports = GridLayout;
 
 /***/ }),
-/* 92 */
+/* 91 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
