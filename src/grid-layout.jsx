@@ -6,11 +6,9 @@ import Main from './components/main.jsx';
 class GridLayout extends React.Component {
   constructor(props) {
     super(props);
-    console.log('gridlayout constructor');
   }
 
   render() {
-    console.log('gridlayout render');
     return [
       <div key="header" id="header" />,
       <div key="navi" id="navi">

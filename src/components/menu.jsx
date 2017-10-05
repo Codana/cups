@@ -5,7 +5,6 @@ import './menu.css';
 class Menu extends React.Component {
   constructor(props) {
     super(props);
-    console.log('menu constructor');
   }
 
   componentDidMount() {
@@ -15,7 +14,6 @@ class Menu extends React.Component {
   }
 
   render() {
-    console.log('Menu render');
     return (
       <div className="router">
         <Link to="/">Home</Link>
