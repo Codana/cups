@@ -1,0 +1,34 @@
+{
+  "members": {
+    "name": "Antti",
+    "pwd": "xyz",
+    "email": "antti.moksi@comptel.com",
+    "external": false
+  },
+  "whiskies": {
+    "id": 1,
+    "owner": "Antti",
+    "distillery": "Ardbeg",
+    "name": "Uigeadail",
+    "bottler": "",
+    "vol": 70,
+    "alcVol": 54.2,
+    "price": 55,
+    "photos": [{
+      "id": 1,
+      "member": "Antti",
+      "url": ""
+    }]
+  },
+  "sessions": {
+    "id": 1,
+    "date": "",
+    "members": ["Antti", ""],
+    "comments": "",
+    "photos": [{
+      "id": 1,
+      "member": "Antti",
+      "url": ""
+    }]
+  }
+}
